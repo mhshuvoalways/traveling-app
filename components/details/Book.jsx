@@ -17,18 +17,18 @@ const Book = () => {
         </div>
       </div>
       <div className="mt-5 space-y-3 border p-5 rounded-2xl">
-        <div className="text-center w-full md:w-auto flex items-center">
+        <div className="text-center w-full md:w-auto flex items-center gap-5">
           <i className="fa-regular fa-calendar text-2xl"></i>
           <div>
-            <p className="font-semibold text-xl">Feb 06 - Feb 10</p>
-            <Calendar />
+            <p className="font-semibold text-xl text-start">Feb 06 - Feb 10</p>
+            <Calendar book/>
           </div>
         </div>
-        <div className="text-center w-full md:w-auto flex items-center gap-3">
+        <div className="text-center w-full md:w-auto flex items-center gap-5">
           <i className="fa-regular fa-user text-2xl"></i>
           <div>
-            <p className="font-semibold text-xl">4 Guests</p>
-            <p>Guests</p>
+            <p className="font-semibold text-xl text-start">4 Guests</p>
+            <input type="number" className="outline-0 text-start" placeholder="Guests"/>
           </div>
         </div>
       </div>

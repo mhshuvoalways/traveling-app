@@ -57,7 +57,7 @@ const Header = () => {
               </Link>
             </li>
             <li>
-              <Link href="properties" className="cursor-pointer hover:text-primary text-lg text-gray-600">
+              <Link href="/properties" className="cursor-pointer hover:text-primary text-lg text-gray-600">
                 Properties
               </Link>
             </li>
@@ -78,7 +78,7 @@ const Header = () => {
             </Link>
           </li>
           <li>
-            <Link href="properties">
+            <Link href="/properties">
               <p className="py-2 w-10/12 mx-auto">Properties</p>
             </Link>
           </li>
