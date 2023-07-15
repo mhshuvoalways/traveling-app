@@ -69,7 +69,7 @@ const Header = () => {
           showHeader
             ? "translate-y-0 w-full"
             : "-translate-y-full w-0 opacity-0"
-        } transform transition-all duration-300 fixed top-16 border-b border-t shadow-md left-0 right-0 z-20 block md:hidden`}
+        } transform transition-all duration-300 fixed top-16 border-b border-t shadow-md left-0 right-0 z-20 block md:hidden bg-white`}
       >
         <ul>
           <li>

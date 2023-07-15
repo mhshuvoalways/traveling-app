@@ -1,6 +1,6 @@
 const Amenities = () => {
   return (
-    <div className="shadow-sm border rounded-xl p-10 bg-white">
+    <div className="shadow-sm border rounded-xl p-5 md:p-10 bg-white">
       <p className="text-3xl text-gray-800 font-semibold mb-2">Amenities</p>
       <p>About the propertys amenities and services</p>
       <div className="flex justify-between items-center flex-wrap mt-5 gap-5">

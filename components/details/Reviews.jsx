@@ -2,7 +2,7 @@ import Review from "./Review";
 
 const Reviews = ({ modalHandler }) => {
   return (
-    <div className="shadow-sm border rounded-xl p-10 bg-white">
+    <div className="shadow-sm border rounded-xl p-5 md:p-10 bg-white">
       <div className="flex justify-between gap-2 mb-5">
         <div>
           <p className="text-3xl text-gray-800 font-semibold mb-2">Reviews</p>

@@ -1,6 +1,6 @@
 const Rools = () => {
   return (
-    <div className="shadow-sm border rounded-xl p-10 bg-white">
+    <div className="shadow-sm border rounded-xl p-5 md:p-10 bg-white">
       <p className="text-3xl text-gray-800 font-semibold mb-2">Rools</p>
       <p>Please dont break our rools</p>
       <div className="mt-5 space-y-2">

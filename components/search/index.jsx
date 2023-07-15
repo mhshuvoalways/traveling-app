@@ -3,17 +3,17 @@ import Calendar from "../calendar";
 const index = ({ availability }) => {
   return (
     <div
-      className={`mx-auto shadow-lg md:rounded-full rounded-md bg-white px-5 py-2 text-gray-600 flex items-center justify-between flex-wrap gap-5 ${
+      className={`mx-auto shadow-lg md:rounded-full rounded-md bg-white px-5 py-2 text-gray-600 flex items-center justify-center md:justify-between flex-wrap gap-5 ${
         availability
-          ? "top-0 static w-full"
+          ? "w-full"
           : "md:bottom-10 md:absolute relative w-full md:w-10/12 mt-5"
       }`}
     >
-      <div className="text-center w-full md:w-auto flex items-center">
+      <div className="text-center w-full md:w-auto flex items-center justify-center">
         <i className="fa-solid fa-location-dot text-2xl"></i>
         <div>
           <p className="font-semibold text-xl">Location</p>
-          <select className="outline-0 cursor-pointer text-center">
+          <select className="outline-0 cursor-pointer text-center bg-white">
             <option className="">United State</option>
             <option className="">Florida</option>
             <option className="">Deltona</option>
@@ -22,7 +22,7 @@ const index = ({ availability }) => {
         </div>
       </div>
       <p className="hidden md:block">|</p>
-      <div className="text-center w-full md:w-auto flex items-center">
+      <div className="text-center w-full md:w-auto flex items-center justify-center">
         <i className="fa-regular fa-calendar text-2xl"></i>
         <div>
           <p className="font-semibold text-xl">Feb 06 - Feb 10</p>
@@ -30,7 +30,7 @@ const index = ({ availability }) => {
         </div>
       </div>
       <p className="hidden md:block">|</p>
-      <div className="text-center w-full md:w-auto flex items-center gap-3">
+      <div className="text-center w-full md:w-auto flex items-center justify-center">
         <i className="fa-regular fa-user text-2xl"></i>
         <div>
           <p className="font-semibold text-xl">4 Guests</p>

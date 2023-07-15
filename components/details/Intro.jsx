@@ -1,7 +1,7 @@
 const Intro = () => {
   return (
     <div>
-      <div className="shadow-sm border rounded-xl p-10 bg-white">
+      <div className="shadow-sm border rounded-xl p-5 md:p-10 bg-white">
         <p className="text-3xl text-gray-800 font-semibold">
           ☀Beach Paradise | Steps to the Ocean | Pool | Pets Book NOW!
         </p>

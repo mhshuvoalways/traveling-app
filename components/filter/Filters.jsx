@@ -15,6 +15,18 @@ const Filters = ({ modalHandler }) => {
             </p>
           </div>
         </div>
+        <div className="mt-2 flex justify-between gap-2 items-center">
+          <p>Beds</p>
+          <div className="flex justify-between gap-5 items-center text-xl">
+            <p className="border-primary border h-4 w-4 pb-4 pt-3 pr-4 pl-4 rounded-full flex justify-center items-center cursor-pointer">
+              -
+            </p>
+            <p>0</p>
+            <p className="border-primary border h-4 w-4 pb-4 pt-3 pr-4 pl-4 rounded-full flex justify-center items-center cursor-pointer">
+              +
+            </p>
+          </div>
+        </div>
       </div>
       <hr />
       <div className="my-5">

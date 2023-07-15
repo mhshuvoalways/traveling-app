@@ -3,7 +3,7 @@ import Calendar from "../calendar";
 
 const Book = () => {
   return (
-    <div className="shadow-sm border rounded-xl py-10 px-5 bg-white text-gray-700">
+    <div className="shadow-sm border rounded-xl p-5 md:p-10 bg-white text-gray-700">
       <div className="flex gap-1 justify-between items-center">
         <div className="flex gap-1 items-center">
           <p className="font-semibold text-3xl">$119</p>

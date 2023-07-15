@@ -22,10 +22,10 @@ const Confirm = () => {
       <div className="mt-5 pt-5 border-t">
         <p className="text-2xl font-semibold">Pay with</p>
         <div className="flex justify-between gap-2 flex-wrap">
-          <p className="bg-primary rounded-full px-10 cursor-pointer py-2 mt-5 text-white font-semibold">
+          <p className="bg-primary rounded-full px-10 cursor-pointer py-2 mt-5 text-white font-semibold md:w-auto w-full text-center">
             PAYPAL
           </p>
-          <p className="bg-secondary rounded-full px-10 cursor-pointer py-2 mt-5 text-white font-semibold">
+          <p className="bg-secondary rounded-full px-10 cursor-pointer py-2 mt-5 text-white font-semibold md:w-auto w-full text-center">
             CREDIT CARD
           </p>
         </div>

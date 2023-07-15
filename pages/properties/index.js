@@ -18,7 +18,7 @@ const Index = () => {
   return (
     <div>
       <Header />
-      <div className="w-10/12 mx-auto pt-20">
+      <div className="w-10/12 mx-auto pt-28">
         <Search availability />
         <FilterBtn modalHandler={modalHandler} />
         {modal && (
