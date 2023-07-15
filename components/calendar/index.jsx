@@ -18,7 +18,7 @@ const Calendar = () => {
       startDate={startDate}
       endDate={endDate}
       selectsRange
-      className="outline-0 text-center"
+      className="outline-0 text-end md:text-center"
       placeholderText="Check in - Check out"
     />
   );
