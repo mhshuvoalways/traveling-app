@@ -1,6 +1,11 @@
-import Calendar from "../calendar";
+import { useContext } from "react";
+import { MyContext } from "../../context/context";
+import Calendar from "../calendar/SearchCalendar";
 
-const index = ({ availability }) => {
+const Index = ({ availability }) => {
+  const { searchObj, onChangeLocation, onChangeDate, onChangeGuests } =
+    useContext(MyContext);
+
   return (
     <div
       className={`mx-auto shadow-lg md:rounded-full rounded-md bg-white px-5 py-2 text-gray-600 flex items-center justify-center md:justify-between flex-wrap gap-5 ${
@@ -9,32 +14,47 @@ const index = ({ availability }) => {
           : "md:bottom-10 md:absolute relative w-full md:w-10/12 mt-5"
       }`}
     >
-      <div className="text-end md:text-center w-full md:w-auto flex items-center md:justify-center justify-between">
+      <div className="text-end md:text-center w-full md:w-auto flex items-center md:justify-center justify-between gap-5">
         <i className="fa-solid fa-location-dot text-2xl"></i>
         <div>
           <p className="font-semibold text-xl">Location</p>
-          <select className="outline-0 cursor-pointer text-end md:text-center bg-white">
-            <option className="">United State</option>
-            <option className="">Florida</option>
-            <option className="">Deltona</option>
-            <option className="">Volusia County</option>
+          <select
+            className="outline-0 cursor-pointer text-end md:text-start  bg-white pl-14 pr-0 md:pr-5"
+            onChange={onChangeLocation}
+            value={searchObj.searchLocation}
+          >
+            <option>United State</option>
+            <option>Deltona</option>
+            <option>New Smyrna Beach</option>
+            <option>Volusia County</option>
           </select>
         </div>
       </div>
       <p className="hidden md:block">|</p>
-      <div className="text-end md:text-center w-full md:w-auto flex items-center md:justify-center justify-between">
+      <div className="text-end md:text-center w-full md:w-auto flex items-center md:justify-center justify-between gap-5">
         <i className="fa-regular fa-calendar text-2xl"></i>
         <div>
-          <p className="font-semibold text-xl">Feb 06 - Feb 10</p>
-          <Calendar />
+          <p className="font-semibold text-xl">Check in-Check out</p>
+          <Calendar
+            startDate={searchObj.searchDate.startDate}
+            endDate={searchObj.searchDate.endDate}
+            onChange={onChangeDate}
+          />
         </div>
       </div>
       <p className="hidden md:block">|</p>
-      <div className="text-end md:text-center w-full md:w-auto flex items-center md:justify-center justify-between">
+      <div className="text-end md:text-center w-full md:w-auto flex items-center md:justify-center justify-between gap-5">
         <i className="fa-regular fa-user text-2xl"></i>
         <div>
           <p className="font-semibold text-xl">4 Guests</p>
-          <input type="number" className="outline-0 text-end md:text-center" placeholder="Guests"/>
+          <input
+            type="number"
+            className="outline-0 text-end md:text-center"
+            placeholder="Guests"
+            value={searchObj.searchGuests}
+            onChange={onChangeGuests}
+            min={1}
+          />
         </div>
       </div>
       <button className="bg-primary text-white md:w-16 md:h-16 rounded-full font-bold mx-auto md:mx-0 w-full h-12">
@@ -44,4 +64,4 @@ const index = ({ availability }) => {
   );
 };
 
-export default index;
+export default Index;

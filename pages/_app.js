@@ -1,5 +1,6 @@
 import "@/styles/globals.css";
 import Head from "next/head";
+import Context from "../context/context";
 
 export default function App({ Component, pageProps }) {
   return (
@@ -10,7 +11,9 @@ export default function App({ Component, pageProps }) {
         <title>Traveling</title>
       </Head>
       <div className={`bg-gray-50 overflow-x-hidden`}>
-        <Component {...pageProps} />
+        <Context>
+          <Component {...pageProps} />
+        </Context>
       </div>
     </>
   );

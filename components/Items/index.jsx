@@ -1,5 +1,6 @@
 import Link from "next/link";
 import ItemCard from "./ItemCard";
+import database from "../../public/db";
 
 const index = () => {
   return (
@@ -20,9 +21,21 @@ const index = () => {
         </Link>
       </div>
       <div className="flex justify-between items-center mt-10 gap-5 flex-wrap md:flex-nowrap">
-        <ItemCard />
-        <ItemCard />
-        <ItemCard />
+        {database.map((condo) => (
+          <ItemCard
+            key={condo.id}
+            id={condo.id}
+            images={condo.images}
+            title={condo.title}
+            description={condo.description}
+            benefits={condo.benefits}
+            price={condo.price}
+            itemLocation={condo.itemLocation}
+            amenities={condo.amenities}
+            availability={condo.availability}
+            reviews={condo.reviews}
+          />
+        ))}
       </div>
     </div>
   );
