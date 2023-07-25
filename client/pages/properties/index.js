@@ -11,6 +11,7 @@ import Search from "@/components/search";
 
 const Index = () => {
   const [modal, setModal] = useState(false);
+  const [cardHover, setCardHover] = useState(1);
   const {
     finalItems,
     searchClickHandler,
@@ -64,7 +65,7 @@ const Index = () => {
           </Modal>
         )}
         <div className="flex justify-center mt-10 gap-5 flex-wrap md:flex-nowrap">
-          <div className="w-full md:w-8/12 flex gap-10 flex-wrap overflow-y-scroll overflow-x-hidden">
+          <div className="w-full md:w-8/12 flex gap-10 flex-wrap">
             {finalItems.map((condo) => (
               <ItemCard
                 property
@@ -79,10 +80,11 @@ const Index = () => {
                 amenities={condo.amenities}
                 availability={condo.availability}
                 reviews={condo.reviews}
+                setCardHover={setCardHover}
               />
             ))}
           </div>
-          <Map />
+          <Map cardHover={cardHover} />
         </div>
       </div>
       <Footer />

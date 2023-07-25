@@ -9,6 +9,7 @@ const ItemCard = ({
   benefits,
   price,
   reviews,
+  setCardHover,
 }) => {
   let sumReview = 0;
   reviews.forEach((el) => {
@@ -21,6 +22,7 @@ const ItemCard = ({
       className={`bg-white w-full shadow-sm rounded ${
         property ? "md:w-5/12" : "md:w-4/12"
       }`}
+      onMouseOver={() => setCardHover(id)}
     >
       <Image
         src={images[0]}

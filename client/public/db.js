@@ -46,6 +46,7 @@ const items = [
     itemLocation: {
       placeName: "4849 Saxon Drive, New Smyrna Beach, United States",
       image: NewSmyrnaBeach,
+      coords: [29.0295217, -81.2502721],
     },
     amenities: [
       {
@@ -99,12 +100,13 @@ const items = [
     benefits: {
       guests: 6,
       bedrooms: 2,
-      beds: 5,
+      beds: 4,
     },
     price: 6,
     itemLocation: {
       placeName: "3801 S. Atlantic Avenue, New Smyrna Beach, United States",
       image: NewSmyrnaBeach,
+      coords: [28.9537076, -81.0240806],
     },
     amenities: [
       {
@@ -161,15 +163,16 @@ const items = [
     There is a private bathroom with bidet in all units, along with a hairdryer and free toiletries. <br/>
     The Symphony 9 Tam Coc offers a terrace. Both a bicycle rental service and a car rental service are available at the accommodation, while cycling can be enjoyed nearby.`,
     benefits: {
-      guests: 8,
-      bedrooms: 3,
-      beds: 6,
+      guests: 6,
+      bedrooms: 2,
+      beds: 3,
     },
     price: 9,
     itemLocation: {
       placeName:
         "5300 S. Atlantic Avenue, Building 20, New Smyrna Beach, United States",
       image: NewSmyrnaBeach,
+      coords: [29.0295217, -81.2502721],
     },
     amenities: [
       {

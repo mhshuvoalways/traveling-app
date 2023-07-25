@@ -32,9 +32,7 @@ const Index = ({ availability }) => {
             value={searchObj.searchLocation}
           >
             <option>United State</option>
-            <option>Deltona</option>
             <option>New Smyrna Beach</option>
-            <option>Volusia County</option>
           </select>
         </div>
       </div>
