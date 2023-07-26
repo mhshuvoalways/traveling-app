@@ -22,7 +22,7 @@ const ItemCard = ({
       className={`bg-white w-full shadow-sm rounded ${
         property ? "md:w-5/12" : "md:w-4/12"
       }`}
-      onMouseOver={() => setCardHover(id)}
+      onMouseOver={() => setCardHover && setCardHover(id)}
     >
       <Image
         src={images[0]}
@@ -36,7 +36,7 @@ const ItemCard = ({
         <p className="text-lg font-semibold">{title}</p>
         <div className="flex gap-1 justify-between items-center mt-2 text-gray-600">
           <p>{benefits.guests} Guests</p>
-          <p>{benefits.bedrooms} Beedrooms</p>
+          <p>{benefits.bedrooms} Bedrooms</p>
           <p>{benefits.beds} Beds</p>
         </div>
         <div className="flex gap-1 justify-between items-center mt-2">

@@ -16,7 +16,7 @@ const index = () => {
           <div className="text-center mt-5">
             <p className="text-xl">Book & relax</p>
             <p className="font-light mt-2">
-              Let each trip be an inspirational journey, each room a peaceful
+              Let each trip be an inspirational journey, each condo a peaceful
               space
             </p>
           </div>
@@ -26,7 +26,7 @@ const index = () => {
           <div className="text-center mt-5">
             <p className="text-xl">Smart checkout</p>
             <p className="font-light mt-2">
-              Let each trip be an inspirational journey, each room a peaceful
+              Let each trip be an inspirational journey, each condo a peaceful
               space
             </p>
           </div>
@@ -36,7 +36,7 @@ const index = () => {
           <div className="text-center mt-5">
             <p className="text-xl">Save more</p>
             <p className="font-light mt-2">
-              Let each trip be an inspirational journey, each room a peaceful
+              Let each trip be an inspirational journey, each condo a peaceful
               space
             </p>
           </div>

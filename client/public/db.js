@@ -44,7 +44,7 @@ const items = [
     },
     price: 2,
     itemLocation: {
-      placeName: "4849 Saxon Drive, New Smyrna Beach, United States",
+      placeName: "4849 Saxon Drive, New Smyrna Beach FL, United States",
       image: NewSmyrnaBeach,
       coords: [29.0295217, -81.2502721],
     },
@@ -104,7 +104,7 @@ const items = [
     },
     price: 6,
     itemLocation: {
-      placeName: "3801 S. Atlantic Avenue, New Smyrna Beach, United States",
+      placeName: "3801 S. Atlantic Avenue, New Smyrna Beach FL, United States",
       image: NewSmyrnaBeach,
       coords: [28.9537076, -81.0240806],
     },
@@ -170,7 +170,7 @@ const items = [
     price: 9,
     itemLocation: {
       placeName:
-        "5300 S. Atlantic Avenue, Building 20, New Smyrna Beach, United States",
+        "5300 S. Atlantic Avenue, Building 20, New Smyrna Beach FL, United States",
       image: NewSmyrnaBeach,
       coords: [29.0295217, -81.2502721],
     },

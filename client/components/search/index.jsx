@@ -31,8 +31,7 @@ const Index = ({ availability }) => {
             onChange={onChangeLocation}
             value={searchObj.searchLocation}
           >
-            <option>United State</option>
-            <option>New Smyrna Beach</option>
+            <option>New Smyrna Beach FL</option>
           </select>
         </div>
       </div>
