@@ -8,15 +8,15 @@ const Index = () => {
 
   return (
     <div className="w-10/12 mx-auto pt-20">
-      <div className="flex justify-between gap-5 items-center">
+      <div className="flex justify-between gap-5">
         <div>
           <p className="text-secondary font-semibold text-4xl">Stay with us</p>
           <p className="text-gray-600 mt-2">
-            No matter which of our condos you choose, you can be sure to have an
+            {`No matter which of our condos you choose, you can be sure to have an
             incredible beach vacation. Our staff is here to make your stay as
             enjoyable as possible, so don't hesitate to reach out with any
             questions or concerns by phone or email – we're happy to help! Get
-            ready for the beach getaway.
+            ready for the beach getaway.`}
           </p>
         </div>
         <Link

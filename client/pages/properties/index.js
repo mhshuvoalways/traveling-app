@@ -1,13 +1,13 @@
-import { useContext, useState } from "react";
-import { MyContext } from "../../context/context";
-import ItemCard from "@/components/Items/ItemCard";
 import FilterBtn from "@/components/filter/FilterBtn";
 import Filters from "@/components/filter/Filters";
 import Footer from "@/components/footer";
 import Header from "@/components/header";
+import ItemCard from "@/components/items/ItemCard";
 import Map from "@/components/map";
 import Modal from "@/components/modal";
 import Search from "@/components/search";
+import { useContext, useState } from "react";
+import { MyContext } from "../../context/context";
 
 const Index = () => {
   const [modal, setModal] = useState(false);

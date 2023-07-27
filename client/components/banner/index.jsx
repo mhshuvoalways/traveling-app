@@ -16,11 +16,11 @@ const index = () => {
           <p className="text-secondary font-bold text-7xl">Healthy travel,</p>
           <p className="font-normal text-6xl">healthy heart</p>
           <p className="font-normal text-lg text-gray-600">
-            Visiting New Smyrna Beach is an amazing experience that you won't
+            {`Visiting New Smyrna Beach is an amazing experience that you won't
             soon forget. With our three condo options, you'll be able to find
             the perfect home away from home for your vacation! Each complex
             offers different features, so we're sure you'll find something to
-            fit your needs.
+            fit your needs.`}
           </p>
         </div>
         <div className="w-full md:w-5/12 flex flex-wrap gap-5 md:justify-end justify-center">

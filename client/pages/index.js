@@ -1,9 +1,9 @@
-import Header from "@/components/header";
 import Banner from "@/components/banner";
-import Items from "@/components/Items";
 import BookingGuide from "@/components/bookingGuide";
-import HowWorks from "@/components/howworks";
 import Footer from "@/components/footer";
+import Header from "@/components/header";
+import HowWorks from "@/components/howworks";
+import Items from "@/components/items";
 
 const index = () => {
   return (

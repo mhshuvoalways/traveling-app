@@ -7,7 +7,7 @@ const index = () => {
             Know which condo you are booking
           </p>
           <p className="text-gray-600 mt-6">
-            For those looking for a little extra luxury, Point East Condo is a
+            {`For those looking for a little extra luxury, Point East Condo is a
             great choice. These two bedrooms and two bath condo offers views of
             the ocean and has a heated pool and shuffleboard court. It's perfect
             for those who want to take their beach vacation to the next level!
@@ -27,7 +27,7 @@ const index = () => {
             Club South is the place for you. This two-bedroom, two bathroom
             condo offers breathtaking ocean views from the pool deck and gives
             you easy access to the beach – just 25 steps away! You can also
-            enjoy their tennis courts and shuffleboard court
+            enjoy their tennis courts and shuffleboard court`}
           </p>
         </div>
       </div>
