@@ -1,8 +1,5 @@
 import Image from "next/image";
-import Banner from "../../public/banner/banner.jpg";
-import Banner2 from "../../public/banner/banner2.jpg";
-import Banner3 from "../../public/banner/banner3.jpg";
-import Banner4 from "../../public/banner/banner4.jpg";
+import Logo from "../../public/logo/logo.mp4";
 import Search from "../search";
 
 const index = () => {
@@ -24,10 +21,7 @@ const index = () => {
           </p>
         </div>
         <div className="w-full md:w-5/12 flex flex-wrap gap-5 md:justify-end justify-center">
-          <Image src={Banner} alt="" className="w-5/12 rounded-lg" />
-          <Image src={Banner2} alt="" className="w-5/12 rounded-lg" />
-          <Image src={Banner3} alt="" className="w-5/12 rounded-lg" />
-          <Image src={Banner4} alt="" className="w-5/12 rounded-lg" />
+          <video src={Logo} className="rounded-lg" autoPlay muted />
         </div>
       </div>
       <Search />

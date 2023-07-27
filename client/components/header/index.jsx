@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import Image from "next/image";
-import Logo from "../../public/logo/Logo.jpg";
+import Logo from "../../public/logo/logo.mp4";
 
 const Header = () => {
   const [showHeader, setShowHeader] = useState(false);
@@ -37,7 +36,7 @@ const Header = () => {
       <header className="w-10/12 mx-auto">
         <nav className="flex justify-between gap-5 flex-wrap items-center">
           <Link href="/">
-            <Image src={Logo} alt="" className="w-20" />
+            <video src={Logo} className="rounded-lg w-28" muted autoPlay />
           </Link>
           {showHeader ? (
             <p
