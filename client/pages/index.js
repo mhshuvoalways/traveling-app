@@ -3,7 +3,7 @@ import BookingGuide from "@/components/bookingGuide";
 import Footer from "@/components/footer";
 import Header from "@/components/header";
 import HowWorks from "@/components/howworks";
-import Items from "@/components/items";
+import Items from "@/components/Items";
 
 const index = () => {
   return (
