@@ -1,8 +1,14 @@
-import Image from "next/image";
+import { useEffect, useRef } from "react";
 import Logo from "../../public/logo/logo.mp4";
 import Search from "../search";
 
-const index = () => {
+const Index = () => {
+  const videoRef = useRef(null);
+
+  useEffect(() => {
+    videoRef.current.play();
+  }, [videoRef]);
+
   return (
     <div className="w-10/12 mx-auto pt-20 md:pt-0">
       <div className="flex flex-wrap md:flex-nowrap justify-between items-center md:h-screen h-auto gap-5">
@@ -21,7 +27,7 @@ const index = () => {
           </p>
         </div>
         <div className="w-full md:w-5/12 flex flex-wrap gap-5 md:justify-end justify-center">
-          <video className="rounded-lg" autoPlay muted controls>
+          <video className="rounded-lg" ref={videoRef} autoPlay muted>
             <source src={Logo} />
           </video>
         </div>
@@ -31,4 +37,4 @@ const index = () => {
   );
 };
 
-export default index;
+export default Index;
