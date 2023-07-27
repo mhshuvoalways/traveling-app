@@ -40,9 +40,18 @@ const Footer = () => {
             <p>407.430.9541</p>
           </div>
           <div className="flex gap-5 mt-5">
-            <i className="fa-brands cursor-pointer fa-facebook"></i>
-            <i className="fa-brands cursor-pointer fa-instagram"></i>
-            <i className="fa-brands cursor-pointer fa-twitter"></i>
+            <a
+              href="https://www.facebook.com/profile.php?id=100057277036574"
+              target="blank"
+            >
+              <i className="fa-brands cursor-pointer fa-facebook"></i>
+            </a>
+            <a href="https://www.instagram.com/nsbcondorentals3" target="blank">
+              <i className="fa-brands cursor-pointer fa-instagram"></i>
+            </a>
+            <a href="https://twitter.com/nsb_rentals" target="blank">
+              <i className="fa-brands cursor-pointer fa-twitter"></i>
+            </a>
           </div>
         </div>
       </div>
