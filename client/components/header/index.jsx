@@ -36,7 +36,9 @@ const Header = () => {
       <header className="w-10/12 mx-auto">
         <nav className="flex justify-between gap-5 flex-wrap items-center">
           <Link href="/">
-            <video src={Logo} className="rounded-lg w-28" muted autoPlay />
+            <video className="rounded-lg w-28" muted autoPlay>
+              <source src={Logo} />
+            </video>
           </Link>
           {showHeader ? (
             <p

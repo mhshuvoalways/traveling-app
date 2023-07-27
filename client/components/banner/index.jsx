@@ -21,7 +21,9 @@ const index = () => {
           </p>
         </div>
         <div className="w-full md:w-5/12 flex flex-wrap gap-5 md:justify-end justify-center">
-          <video src={Logo} className="rounded-lg" autoPlay muted />
+          <video className="rounded-lg" autoPlay muted controls>
+            <source src={Logo} />
+          </video>
         </div>
       </div>
       <Search />
