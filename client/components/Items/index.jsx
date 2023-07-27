@@ -12,8 +12,11 @@ const Index = () => {
         <div>
           <p className="text-secondary font-semibold text-4xl">Stay with us</p>
           <p className="text-gray-600 mt-2">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            Pellentesque ullamcorper molestie elit ac porttitor.
+            No matter which of our condos you choose, you can be sure to have an
+            incredible beach vacation. Our staff is here to make your stay as
+            enjoyable as possible, so don't hesitate to reach out with any
+            questions or concerns by phone or email – we're happy to help! Get
+            ready for the beach getaway.
           </p>
         </div>
         <Link

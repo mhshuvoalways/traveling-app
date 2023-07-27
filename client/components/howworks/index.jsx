@@ -16,18 +16,18 @@ const index = () => {
           <div className="text-center mt-5">
             <p className="text-xl">Book & relax</p>
             <p className="font-light mt-2">
-              Let each trip be an inspirational journey, each condo a peaceful
-              space
+              Know when you get there all you will need is your food, clothes
+              and Toiletries
             </p>
           </div>
         </div>
         <div>
           <Image src={Item2} alt="" className="w-48 mx-auto" />
           <div className="text-center mt-5">
-            <p className="text-xl">Smart checkout</p>
+            <p className="text-xl">Check Out</p>
             <p className="font-light mt-2">
-              Let each trip be an inspirational journey, each condo a peaceful
-              space
+              You will need to start Dishwasher, take trash out and lock the
+              condo.
             </p>
           </div>
         </div>
@@ -36,8 +36,8 @@ const index = () => {
           <div className="text-center mt-5">
             <p className="text-xl">Save more</p>
             <p className="font-light mt-2">
-              Let each trip be an inspirational journey, each condo a peaceful
-              space
+              Save more by liking us on Facebook, Twitter or Instagram as we do
+              run special offers!
             </p>
           </div>
         </div>

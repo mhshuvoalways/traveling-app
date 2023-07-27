@@ -77,7 +77,7 @@ const Filters = ({
   return (
     <div>
       <div className="mb-5">
-        <p className="fond-semibold text-2xl">Rooms and Bathrooms</p>
+        <p className="fond-semibold text-2xl">Bedrooms and Beds</p>
         <div className="mt-2 flex justify-between gap-2 items-center">
           <p>Bedrooms</p>
           <div className="flex justify-between gap-5 items-center text-xl">
