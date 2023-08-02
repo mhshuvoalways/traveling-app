@@ -13,7 +13,6 @@ const Book = ({
   uniqueDatesArray,
   onChange,
   setTostify,
-  findItems,
   sumReview,
 }) => {
   const router = useRouter();
@@ -28,10 +27,10 @@ const Book = ({
         <div className="flex gap-0 items-center">
           <i className="fa-solid fa-star text-yellow-500"></i>
           <p className="font-semibold">
-            {findItems?.reviews.length &&
-              (sumReview / findItems?.reviews.length).toFixed(1)}
+            {data?.reviews.length &&
+              (sumReview / data?.reviews.length).toFixed(1)}
           </p>
-          <p className="text-gray-600">({findItems?.reviews.length})</p>
+          <p className="text-gray-600">({data?.reviews.length})</p>
         </div>
       </div>
       <div className="mt-5 space-y-3 border p-5 rounded-2xl">
@@ -59,15 +58,25 @@ const Book = ({
           <p>${startDate && endDate ? data?.price * dateArray.length : 0}</p>
         </div>
         <div className="flex justify-between gap-2 mt-5 text-xl">
-          <p>Service charge</p>
-          <p>$0</p>
+          <p>Credit card fee</p>
+          <p>$490</p>
+        </div>
+        <div className="flex justify-between gap-2 mt-5 text-xl">
+          <p>Cleaning fee</p>
+          <p>$100</p>
+        </div>
+        <div className="flex justify-between gap-2 mt-5 text-xl">
+          <p>Refundable security fee</p>
+          <p>$300</p>
         </div>
         <div className="flex justify-between gap-2 mt-5 text-xl border-t">
           <p className="text-2xl font-semibold">Total</p>
-          <p>${startDate && endDate ? data?.price * dateArray.length : 0}</p>
+          <p>
+            ${startDate && endDate ? data?.price * dateArray.length + 890 : 890}
+          </p>
         </div>
       </div>
-      {startDate && endDate ? (
+      {data?.minNight <= dateArray.length ? (
         <button
           className="bg-secondary w-full rounded-full px-2 py-2 mt-5 text-white font-semibold"
           onClick={() => {
@@ -83,7 +92,7 @@ const Book = ({
         <motion.button
           className="bg-secondary w-full rounded-full px-2 py-2 mt-5 text-white font-semibold"
           onClick={() => {
-            setTostify("Please select at least one night!");
+            setTostify(`Please select at least ${data?.minNight} night!`);
           }}
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}

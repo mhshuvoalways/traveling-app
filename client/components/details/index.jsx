@@ -102,7 +102,6 @@ const Details = ({ query }) => {
             uniqueDatesArray={uniqueDatesArray}
             onChange={onChange}
             setTostify={setTostify}
-            findItems={findItems}
             sumReview={sumReview}
           />
         </div>

@@ -42,7 +42,8 @@ const items = [
       bedrooms: 2,
       beds: 4,
     },
-    price: 2,
+    price: 225,
+    minNight: 3,
     itemLocation: {
       placeName: "4849 Saxon Drive, New Smyrna Beach FL, United States",
       image: NewSmyrnaBeach,
@@ -52,27 +53,32 @@ const items = [
       {
         id: 2,
         icon: "fa-solid fa-tv",
-        name: "TV",
+        name: "TV in every bedroom",
       },
       {
         id: 3,
-        icon: "fa-solid fa-person-swimming",
-        name: "Swiming",
+        icon: "fa-solid fa-kitchen-set",
+        name: "Full kicthen",
       },
       {
         id: 5,
-        icon: "fa-solid fa-fan",
-        name: "AC",
+        icon: "fa-solid fa-temperature-arrow-up",
+        name: "Central air's heat",
       },
       {
         id: 6,
-        icon: "fa-solid fa-soap",
-        name: "Washing machine",
+        icon: "fa-solid fa-table-tennis-paddle-ball",
+        name: "Tennis court shuffle board",
       },
       {
         id: 7,
-        icon: "fa-regular fa-hard-drive",
-        name: "Clothes dryer",
+        icon: "fa-solid fa-wifi",
+        name: "High speed internet",
+      },
+      {
+        id: 9,
+        icon: "fa-solid fa-soap",
+        name: "Dryer",
       },
     ],
     propertyType: [
@@ -102,7 +108,8 @@ const items = [
       bedrooms: 2,
       beds: 4,
     },
-    price: 6,
+    price: 250,
+    minNight: 4,
     itemLocation: {
       placeName: "3801 S. Atlantic Avenue, New Smyrna Beach FL, United States",
       image: NewSmyrnaBeach,
@@ -110,34 +117,39 @@ const items = [
     },
     amenities: [
       {
+        id: 53,
+        icon: "fa-solid fa-temperature-arrow-up",
+        name: "Central air's heat",
+      },
+      {
+        id: 16,
+        icon: "fa-solid fa-table-tennis-paddle-ball",
+        name: "Shuffle board",
+      },
+      {
+        id: 76,
+        icon: "fa-solid fa-wifi",
+        name: "High speed internet",
+      },
+      {
         id: 3,
         icon: "fa-solid fa-person-swimming",
-        name: "Swiming",
+        name: "Heated kiddy pool",
       },
       {
         id: 4,
         icon: "fa-solid fa-kitchen-set",
-        name: "Kitchen",
-      },
-      {
-        id: 5,
-        icon: "fa-solid fa-fan",
-        name: "AC",
-      },
-      {
-        id: 6,
-        icon: "fa-solid fa-soap",
-        name: "Washing machine",
+        name: "Full kitchen",
       },
       {
         id: 7,
         icon: "fa-regular fa-hard-drive",
-        name: "Clothes dryer",
+        name: "Wear's dryer on premise",
       },
       {
         id: 8,
         icon: "fa-solid fa-square",
-        name: "Oven",
+        name: "Microwave",
       },
     ],
     propertyType: [
@@ -150,6 +162,16 @@ const items = [
         id: 3,
         icon: "fa-solid fa-house",
         name: "Elevator in building",
+      },
+      {
+        id: 16,
+        icon: "fa-solid fa-table-tennis-paddle-ball",
+        name: "Shuffle board",
+      },
+      {
+        id: 7,
+        icon: "fa-solid fa-temperature-arrow-up",
+        name: "Heated",
       },
     ],
     availability: [],
@@ -167,7 +189,8 @@ const items = [
       bedrooms: 2,
       beds: 3,
     },
-    price: 9,
+    price: 250,
+    minNight: 3,
     itemLocation: {
       placeName:
         "5300 S. Atlantic Avenue, Building 20, New Smyrna Beach FL, United States",
@@ -178,12 +201,17 @@ const items = [
       {
         id: 1,
         icon: "fa-solid fa-wifi",
-        name: "Internet",
+        name: "High speed internet",
       },
       {
         id: 4,
         icon: "fa-solid fa-kitchen-set",
-        name: "Kitchen",
+        name: "Fully stocked",
+      },
+      {
+        id: 53,
+        icon: "fa-solid fa-temperature-arrow-up",
+        name: "Central air's heat",
       },
       {
         id: 5,
@@ -193,12 +221,37 @@ const items = [
       {
         id: 6,
         icon: "fa-solid fa-soap",
-        name: "Washing machine",
+        name: "Dryer",
       },
       {
         id: 7,
-        icon: "fa-regular fa-hard-drive",
-        name: "Clothes dryer",
+        icon: "fa-solid fa-dumbbell",
+        name: "Gym",
+      },
+      {
+        id: 13,
+        icon: "fa-solid fa-person-swimming",
+        name: "Heated pool",
+      },
+      {
+        id: 16,
+        icon: "fa-solid fa-table-tennis-paddle-ball",
+        name: "Tennis court",
+      },
+      {
+        id: 36,
+        icon: "fa-solid fa-table-tennis-paddle-ball",
+        name: "Basketball shuffle courts",
+      },
+      {
+        id: 38,
+        icon: "fa-solid fa-masks-theater",
+        name: "Movie theatres",
+      },
+      {
+        id: 89,
+        icon: "fa-solid fa-tree",
+        name: "Nature trails",
       },
     ],
     propertyType: [

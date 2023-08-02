@@ -74,6 +74,28 @@ const Filters = ({
     }
   };
 
+  const uniqueAmenitiesObj = {};
+  db.forEach((item) => {
+    item.amenities.forEach((amenity, index) => {
+      const { name } = amenity;
+      if (!uniqueAmenitiesObj[name]) {
+        uniqueAmenitiesObj[index] = { id: index + 1, name };
+      }
+    });
+  });
+  const uniqueAmenities = Object.values(uniqueAmenitiesObj);
+
+  const uniquePropertiesObj = {};
+  db.forEach((item) => {
+    item.propertyType.forEach((pro, index) => {
+      const { name } = pro;
+      if (!uniquePropertiesObj[name]) {
+        uniquePropertiesObj[index] = { id: index + 1, name };
+      }
+    });
+  });
+  const uniquepropertyType = Object.values(uniquePropertiesObj);
+
   return (
     <div>
       <div className="mb-5">
@@ -148,122 +170,42 @@ const Filters = ({
       <div className="my-5">
         <p className="fond-semibold text-2xl">Amenities</p>
         <div className="mt-2 flex gap-4 items-center flex-wrap">
-          <label className="flex gap-2 items-center w-5/12 cursor-pointer">
-            <input
-              type="checkbox"
-              className="w-5 h-5 cursor-pointer"
-              value="Internet"
-              checked={amenities.includes("Internet")}
-              onChange={handleCheckboxChange}
-            />
-            <p>Internet</p>
-          </label>
-          <label className="flex gap-2 items-center w-5/12 cursor-pointer">
-            <input
-              type="checkbox"
-              className="w-5 h-5 cursor-pointer"
-              value="TV"
-              checked={amenities.includes("TV")}
-              onChange={handleCheckboxChange}
-            />
-            <p>TV</p>
-          </label>
-          <label className="flex gap-2 items-center w-5/12 cursor-pointer">
-            <input
-              type="checkbox"
-              className="w-5 h-5 cursor-pointer"
-              value="Swiming"
-              checked={amenities.includes("Swiming")}
-              onChange={handleCheckboxChange}
-            />
-            <p>Swiming</p>
-          </label>
-          <label className="flex gap-2 items-center w-5/12 cursor-pointer">
-            <input
-              type="checkbox"
-              className="w-5 h-5 cursor-pointer"
-              value="Kitchen"
-              checked={amenities.includes("Kitchen")}
-              onChange={handleCheckboxChange}
-            />
-            <p>Kitchen</p>
-          </label>
-          <label className="flex gap-2 items-center w-5/12 cursor-pointer">
-            <input
-              type="checkbox"
-              className="w-5 h-5 cursor-pointer"
-              value="AC"
-              checked={amenities.includes("AC")}
-              onChange={handleCheckboxChange}
-            />
-            <p>AC</p>
-          </label>
-          <label className="flex gap-2 items-center w-5/12 cursor-pointer">
-            <input
-              type="checkbox"
-              className="w-5 h-5 cursor-pointer"
-              value="Washing machine"
-              checked={amenities.includes("Washing machine")}
-              onChange={handleCheckboxChange}
-            />
-            <p>Washing machine</p>
-          </label>
-          <label className="flex gap-2 items-center w-5/12 cursor-pointer">
-            <input
-              type="checkbox"
-              className="w-5 h-5 cursor-pointer"
-              value="Clothes dryer"
-              checked={amenities.includes("Clothes dryer")}
-              onChange={handleCheckboxChange}
-            />
-            <p>Clothes dryer</p>
-          </label>
-          <label className="flex gap-2 items-center w-5/12 cursor-pointer">
-            <input
-              type="checkbox"
-              className="w-5 h-5 cursor-pointer"
-              value="Oven"
-              checked={amenities.includes("Oven")}
-              onChange={handleCheckboxChange}
-            />
-            <p>Oven</p>
-          </label>
+          {uniqueAmenities.map((amenity) => (
+            <label
+              className="flex gap-2 items-center w-5/12 cursor-pointer"
+              key={amenity.id}
+            >
+              <input
+                type="checkbox"
+                className="w-5 h-5 cursor-pointer"
+                value={amenity.name}
+                checked={amenities.includes(amenity.name)}
+                onChange={handleCheckboxChange}
+              />
+              <p>{amenity.name}</p>
+            </label>
+          ))}
         </div>
       </div>
       <hr />
       <div className="my-5">
         <p className="fond-semibold text-2xl">Property type</p>
         <div className="mt-2 flex gap-4 items-center flex-wrap">
-          <label className="flex gap-2 items-center w-5/12 cursor-pointer">
-            <input
-              type="checkbox"
-              className="w-5 h-5 cursor-pointer"
-              value="Outdoor swimming pool"
-              checked={propertyTypes.includes("Outdoor swimming pool")}
-              onChange={handleCheckboxChangeProperty}
-            />
-            <p>Outdoor swimming pool</p>
-          </label>
-          <label className="flex gap-2 items-center w-5/12 cursor-pointer">
-            <input
-              type="checkbox"
-              className="w-5 h-5 cursor-pointer"
-              value="Accessible 24/7"
-              checked={propertyTypes.includes("Accessible 24/7")}
-              onChange={handleCheckboxChangeProperty}
-            />
-            <p>Accessible 24/7</p>
-          </label>
-          <label className="flex gap-2 items-center w-5/12 cursor-pointer">
-            <input
-              type="checkbox"
-              className="w-5 h-5 cursor-pointer"
-              value="Elevator in building"
-              checked={propertyTypes.includes("Elevator in building")}
-              onChange={handleCheckboxChangeProperty}
-            />
-            <p>Elevator in building</p>
-          </label>
+          {uniquepropertyType.map((pro) => (
+            <label
+              className="flex gap-2 items-center w-5/12 cursor-pointer"
+              key={pro.id}
+            >
+              <input
+                type="checkbox"
+                className="w-5 h-5 cursor-pointer"
+                value={pro.name}
+                checked={propertyTypes.includes(pro.name)}
+                onChange={handleCheckboxChangeProperty}
+              />
+              <p>{pro.name}</p>
+            </label>
+          ))}
         </div>
       </div>
       <div className="flex justify-between gap-2 mt-10">
