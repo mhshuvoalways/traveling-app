@@ -9,7 +9,7 @@ const Rools = ({ data }) => {
           <p>Children welcome</p>
         </div>
         <div className="flex items-center gap-2">
-          {data.id === 2 ? (
+          {data?.id === 2 ? (
             <>
               <p className="text-secondary font-semibold">✕</p>
               <p>Not pet friendly</p>
