@@ -75,7 +75,7 @@ const Details = ({ query }) => {
           <Availability uniqueDatesArray={uniqueDatesArray} />
           <Location data={findItems} />
           <Property data={findItems} />
-          <Rools />
+          <Rools data={findItems}/>
           <Rules data={findItems}/>
           <Reviews
             modalHandler={modalHandler}
