@@ -166,7 +166,7 @@ const items = [
       {
         id: 7,
         icon: "fa-regular fa-hard-drive",
-        name: "Wear's dryer on premise",
+        name: "Washer and Dryer on Premise",
       },
       {
         id: 8,

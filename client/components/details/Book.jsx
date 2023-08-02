@@ -15,6 +15,7 @@ const Book = ({
   setTostify,
   sumReview,
 }) => {
+
   const router = useRouter();
   return (
     <div className="shadow-sm border rounded-xl p-5 md:p-00 bg-white text-gray-700">
@@ -58,21 +59,26 @@ const Book = ({
           <p>${startDate && endDate ? data?.price * dateArray.length : 0}</p>
         </div>
         <div className="flex justify-between gap-2 mt-5 text-xl">
-          <p>Credit card fee</p>
-          <p>$490</p>
-        </div>
-        <div className="flex justify-between gap-2 mt-5 text-xl">
           <p>Cleaning fee</p>
-          <p>$100</p>
+          <p>$200</p>
         </div>
         <div className="flex justify-between gap-2 mt-5 text-xl">
           <p>Refundable security fee</p>
           <p>$300</p>
         </div>
+        <div className="flex justify-between gap-2 mt-5 text-xl">
+          <p>Credit card fee</p>
+          <p>4%</p>
+        </div>
         <div className="flex justify-between gap-2 mt-5 text-xl border-t">
           <p className="text-2xl font-semibold">Total</p>
           <p>
-            ${startDate && endDate ? data?.price * dateArray.length + 890 : 890}
+            $
+            {startDate && endDate
+              ? data?.price * dateArray.length +
+                500 +
+                ((data?.price * dateArray.length + 500) * 4) / 100
+              : 500 + (500 * 4) / 100}
           </p>
         </div>
       </div>

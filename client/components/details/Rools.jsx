@@ -9,8 +9,8 @@ const Rools = () => {
           <p>Children welcome</p>
         </div>
         <div className="flex items-center gap-2">
-          <p className="text-secondary font-semibold">✕</p>
-          <p>Not pets</p>
+          <i className="fa-solid fa-check text-green-600"></i>
+          <p>Pet friendly</p>
         </div>
         <div className="flex items-center gap-2">
           <i className="fa-solid fa-check text-green-600"></i>
