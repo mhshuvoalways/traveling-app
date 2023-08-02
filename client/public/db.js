@@ -58,7 +58,7 @@ const items = [
       {
         id: 3,
         icon: "fa-solid fa-kitchen-set",
-        name: "Full kicthen",
+        name: "Full kitchen",
       },
       {
         id: 5,

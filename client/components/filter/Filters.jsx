@@ -76,10 +76,10 @@ const Filters = ({
 
   const uniqueAmenitiesObj = {};
   db.forEach((item) => {
-    item.amenities.forEach((amenity, index) => {
+    item.amenities.forEach((amenity) => {
       const { name } = amenity;
-      if (!uniqueAmenitiesObj[name]) {
-        uniqueAmenitiesObj[index] = { id: index + 1, name };
+      if (!uniqueAmenitiesObj[name.trim()]) {
+        uniqueAmenitiesObj[name.trim()] = { name };
       }
     });
   });
@@ -87,10 +87,10 @@ const Filters = ({
 
   const uniquePropertiesObj = {};
   db.forEach((item) => {
-    item.propertyType.forEach((pro, index) => {
+    item.propertyType.forEach((pro) => {
       const { name } = pro;
-      if (!uniquePropertiesObj[name]) {
-        uniquePropertiesObj[index] = { id: index + 1, name };
+      if (!uniquePropertiesObj[name.trim()]) {
+        uniquePropertiesObj[name.trim()] = { name };
       }
     });
   });
@@ -173,7 +173,7 @@ const Filters = ({
           {uniqueAmenities.map((amenity) => (
             <label
               className="flex gap-2 items-center w-5/12 cursor-pointer"
-              key={amenity.id}
+              key={amenity.name}
             >
               <input
                 type="checkbox"
@@ -194,7 +194,7 @@ const Filters = ({
           {uniquepropertyType.map((pro) => (
             <label
               className="flex gap-2 items-center w-5/12 cursor-pointer"
-              key={pro.id}
+              key={pro.name}
             >
               <input
                 type="checkbox"
