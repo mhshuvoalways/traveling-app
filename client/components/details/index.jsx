@@ -12,6 +12,7 @@ import Reviews from "./Reviews";
 import AddReview from "./AddReview";
 import Modal from "../modal";
 import Book from "./Book";
+import Rules from "./Rules";
 
 const Details = ({ query }) => {
   const [modal, setModal] = useState(false);
@@ -75,6 +76,7 @@ const Details = ({ query }) => {
           <Location data={findItems} />
           <Property data={findItems} />
           <Rools />
+          <Rules data={findItems}/>
           <Reviews
             modalHandler={modalHandler}
             findItems={findItems}
