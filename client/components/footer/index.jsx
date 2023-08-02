@@ -10,13 +10,9 @@ const Footer = () => {
           <Link href="/">
             <Image src={Logo} alt="" className="w-20" />
           </Link>
-          <a
-            href="https://mlhnshuvo.vercel.app"
-            target="blank"
-            className="font-light text-xs hover:underline"
-          >
-            © All right reserverd MH Shuvo
-          </a>
+          <p className="font-light text-xs">
+            © All right reserverd to New Smyrna Beach Condo Rentals
+          </p>
         </div>
         <div className="w-full sm:w-5/12">
           <p className="text-xl font-semibold">About us</p>

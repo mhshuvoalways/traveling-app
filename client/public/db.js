@@ -38,7 +38,7 @@ const items = [
     The area provides plenty of activities to enjoy including fishing, surfing, biking along Flagler Avenue and more. Whether you are looking for a weekend rental or an extended stay during the winter months, you can find it all here at New Smyrna Beach. Book your stay today and experience the beauty of this coastal town. <br/><br/>
     Discover all that Ocean Club South has to offer and create memories that will last a lifetime! Enjoy the perfect balance of relaxation, adventure, and fun with a trip to this wonderful destination. Spend your days soaking up the sun on one of the most beautiful beaches in Florida while exploring all that the area has to offer. Treat yourself and your family to an unforgettable vacation at Ocean Club South today!`,
     benefits: {
-      guests: 4,
+      guests: 6,
       bedrooms: 2,
       beds: 4,
     },
