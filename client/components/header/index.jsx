@@ -1,13 +1,12 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
-import Logo from "../../public/logo/logo.mp4";
+import Image from "next/image";
+import Logo from "../../public/logo/logo.jpg";
 
 const Header = () => {
   const [showHeader, setShowHeader] = useState(false);
   const [prevScrollY, setPrevScrollY] = useState(0);
   const [scrollDirection, setScrollDirection] = useState(true);
-
-  const videoRefLogo = useRef(null);
 
   const headerHandler = (value) => {
     setShowHeader(value);
@@ -29,10 +28,6 @@ const Header = () => {
     };
   }, [prevScrollY]);
 
-  useEffect(() => {
-    videoRefLogo.current.play();
-  }, [videoRefLogo]);
-
   return (
     <div
       className={`py-5 shadow-sm fixed left-0 right-0 z-10 transition-transform duration-500 ease-in-out bg-white $ ${
@@ -42,14 +37,7 @@ const Header = () => {
       <header className="w-10/12 mx-auto">
         <nav className="flex justify-between gap-5 flex-wrap items-center">
           <Link href="/">
-            <video
-              className="rounded-lg w-28"
-              ref={videoRefLogo}
-              autoPlay
-              muted
-            >
-              <source src={Logo} />
-            </video>
+            <Image src={Logo} className="rounded-lg w-16" />
           </Link>
           {showHeader ? (
             <p
