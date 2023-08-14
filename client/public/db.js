@@ -1,5 +1,3 @@
-import NewSmyrnaBeach from "./location/NewSmyrnaBeach.png";
-
 const cloudinaryBaseUrl = "https://res.cloudinary.com/mhshuvoit/image/upload";
 
 // condo 1
@@ -46,7 +44,6 @@ const items = [
     minNight: 3,
     itemLocation: {
       placeName: "4849 Saxon Drive, New Smyrna Beach FL, United States",
-      image: NewSmyrnaBeach,
       coords: [29.0295217, -81.2502721],
     },
     amenities: [
@@ -134,7 +131,6 @@ const items = [
     minNight: 4,
     itemLocation: {
       placeName: "3801 S. Atlantic Avenue, New Smyrna Beach FL, United States",
-      image: NewSmyrnaBeach,
       coords: [28.9537076, -81.0240806],
     },
     amenities: [
@@ -241,7 +237,6 @@ const items = [
     itemLocation: {
       placeName:
         "5300 S. Atlantic Avenue, Building 20, New Smyrna Beach FL, United States",
-      image: NewSmyrnaBeach,
       coords: [29.0295217, -81.2502721],
     },
     amenities: [
