@@ -13,7 +13,6 @@ const Book = ({
   uniqueDatesArray,
   onChange,
   setTostify,
-  sumReview,
 }) => {
 
   const router = useRouter();
@@ -28,10 +27,9 @@ const Book = ({
         <div className="flex gap-0 items-center">
           <i className="fa-solid fa-star text-yellow-500"></i>
           <p className="font-semibold">
-            {data?.reviews.length &&
-              (sumReview / data?.reviews.length).toFixed(1)}
+            5
           </p>
-          <p className="text-gray-600">({data?.reviews.length})</p>
+          <p className="text-gray-600">(10)</p>
         </div>
       </div>
       <div className="mt-5 space-y-3 border p-5 rounded-2xl">

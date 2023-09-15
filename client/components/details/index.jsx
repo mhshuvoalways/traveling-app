@@ -9,21 +9,14 @@ import Location from "./Location";
 import Property from "./Property";
 import Rools from "./Rools";
 import Reviews from "./Reviews";
-import AddReview from "./AddReview";
-import Modal from "../modal";
 import Book from "./Book";
 import Rules from "./Rules";
 
 const Details = ({ query }) => {
-  const [modal, setModal] = useState(false);
   const [startDate, setStartDate] = useState(null);
   const [endDate, setEndDate] = useState(null);
-  const { setBookObj, setBookDates, finalItems, setTostify, setFinalItems } =
+  const { setBookObj, setBookDates, finalItems, setTostify } =
     useContext(MyContext);
-
-  const modalHandler = () => {
-    setModal(!modal);
-  };
 
   const findItems = finalItems.find(
     (item) => item.id.toString() === query.propertydetails?.toString()
@@ -60,11 +53,6 @@ const Details = ({ query }) => {
     }
   };
 
-  let sumReview = 0;
-  findItems?.reviews.forEach((el) => {
-    sumReview += el.rating;
-  });
-
   return (
     <div className="pt-16">
       <Pictures pictures={findItems} />
@@ -75,23 +63,9 @@ const Details = ({ query }) => {
           <Availability uniqueDatesArray={uniqueDatesArray} />
           <Location data={findItems} />
           <Property data={findItems} />
-          <Rools data={findItems}/>
-          <Rules data={findItems}/>
-          <Reviews
-            modalHandler={modalHandler}
-            findItems={findItems}
-            sumReview={sumReview}
-          />
-          {modal && (
-            <Modal modalHandler={modalHandler} title="Add Review">
-              <AddReview
-                modalHandler={modalHandler}
-                setFinalItems={setFinalItems}
-                itemId={query.propertydetails}
-                finalItems={finalItems}
-              />
-            </Modal>
-          )}
+          <Rools data={findItems} />
+          <Rules data={findItems} />
+          <Reviews />
         </div>
         <div className="lg:w-4/12 w-full">
           <Book
@@ -104,7 +78,6 @@ const Details = ({ query }) => {
             uniqueDatesArray={uniqueDatesArray}
             onChange={onChange}
             setTostify={setTostify}
-            sumReview={sumReview}
           />
         </div>
       </div>
