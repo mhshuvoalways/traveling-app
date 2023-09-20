@@ -92,10 +92,12 @@ const Context = ({ children }) => {
         });
         return updatedItems;
       } else {
-        const [availabilityResponse, reviewsResponse] = await Promise.all([
-          axios.get("/book/getbooks"),
-          axios.get("/review/getreviews"),
-        ]);
+        const [availabilityResponse, reviewsResponse, priceResponse] =
+          await Promise.all([
+            axios.get("/book/getbooks"),
+            axios.get("/review/getreviews"),
+            axios.get("/price/getprices"),
+          ]);
 
         const updatedItems = database.map((item) => {
           const matchingAvailabilityDates = availabilityResponse.data.filter(
@@ -108,10 +110,19 @@ const Context = ({ children }) => {
           const matchingReviews = reviewsResponse.data.filter(
             (reviewItem) => reviewItem.itemId.toString() === item.id.toString()
           );
+          
+          const today = moment(new Date()).format("MM-DD-YYYY");
+          const matchingPrice = priceResponse.data.find(
+            (priceItem) =>
+              priceItem.itemId.toString() === item.id.toString() &&
+              priceItem.dates.includes(today)
+          );
+
           return {
             ...item,
             availability: [...item.availability, ...mergedAvailabilityDates],
             reviews: [...item.reviews, ...matchingReviews],
+            price: matchingPrice ? matchingPrice.price : item.price,
           };
         });
         return updatedItems;
