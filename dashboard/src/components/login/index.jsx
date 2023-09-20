@@ -8,7 +8,8 @@ const Login = () => {
     email: "",
     password: "",
   });
-  const [btnClicked, setBtnClicked] = useState(true);
+  const [errMsg, setErrMsg] = useState("");
+  const [btnClicked, setBtnClicked] = useState(false);
 
   const { isAuth, authHandler } = useContext(MyContext);
 
@@ -19,23 +20,24 @@ const Login = () => {
       ...state,
       [event.target.name]: event.target.value,
     });
+    setErrMsg('')
   };
 
   const onSubmit = (event) => {
     const { email, password } = state;
     if (email && password) {
-      setBtnClicked(false);
+      setBtnClicked(true);
       event.preventDefault();
       axios
         .post("/user/login", state)
         .then((res) => {
           localStorage.setItem("token", res.data.token);
           authHandler();
-          setBtnClicked(true);
+          setBtnClicked(false);
         })
         .catch((err) => {
-          console.log(err.data.message);
-          setBtnClicked(true);
+          setErrMsg(err.response.data.message);
+          setBtnClicked(false);
         });
     }
   };
@@ -72,7 +74,7 @@ const Login = () => {
               required
             />
           </label>
-          {btnClicked ? (
+          {!btnClicked ? (
             <button
               className="bg-indigo-900 text-white py-2 mt-5 w-full hover:bg-indigo-800"
               onClick={onSubmit}
@@ -87,6 +89,7 @@ const Login = () => {
               LOGIN
             </button>
           )}
+          {errMsg && <p className="text-center text-red-500 mt-2">{errMsg}</p>}
         </form>
       </div>
     </div>
