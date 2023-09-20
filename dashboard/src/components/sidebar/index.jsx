@@ -1,7 +1,14 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
+import { MyContext } from "../../context/Context";
 
 const SidebarHeader = ({ children }) => {
   const [isOpen, setIsOpen] = useState(true);
+  const { authHandler } = useContext(MyContext);
+
+  const logoutHandler = () => {
+    localStorage.clear();
+    authHandler();
+  };
 
   const toggleSidebar = () => {
     setIsOpen(!isOpen);
@@ -31,7 +38,7 @@ const SidebarHeader = ({ children }) => {
                 Dashboard
               </p>
             </li>
-            <li>
+            <li onClick={logoutHandler}>
               <p className="hover:text-blue-700 font-semibold hover:bg-gray-50 py-3 pl-10 cursor-pointer">
                 Logout
               </p>

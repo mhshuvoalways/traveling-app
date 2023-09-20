@@ -59,12 +59,17 @@ const Context = ({ children }) => {
     ["items", condoId],
     async () => {
       if (condoId) {
-        const [availabilityResponse, vrboDates, reviewsResponse] =
-          await Promise.all([
-            axios.get("/book/getbooks"),
-            axios.get(`/calendar/getvrbodates/${condoId}`),
-            axios.get("/review/getreviews"),
-          ]);
+        const [
+          availabilityResponse,
+          vrboDates,
+          reviewsResponse,
+          priceResponse,
+        ] = await Promise.all([
+          axios.get("/book/getbooks"),
+          axios.get(`/calendar/getvrbodates/${condoId}`),
+          axios.get("/review/getreviews"),
+          axios.get("/price/getprices"),
+        ]);
 
         const icsData = vrboDates.data;
         const parsedEvents = parseICS(icsData);
@@ -80,6 +85,14 @@ const Context = ({ children }) => {
           const matchingReviews = reviewsResponse.data.filter(
             (reviewItem) => reviewItem.itemId.toString() === item.id.toString()
           );
+
+          const today = moment(new Date()).format("MM-DD-YYYY");
+          const matchingPrice = priceResponse.data.find(
+            (priceItem) =>
+              priceItem.itemId.toString() === item.id.toString() &&
+              priceItem.dates.includes(today)
+          );
+
           return {
             ...item,
             availability: [
@@ -88,6 +101,7 @@ const Context = ({ children }) => {
               ...parsedEvents,
             ],
             reviews: [...item.reviews, ...matchingReviews],
+            price: matchingPrice ? matchingPrice.price : item.price,
           };
         });
         return updatedItems;
@@ -110,7 +124,7 @@ const Context = ({ children }) => {
           const matchingReviews = reviewsResponse.data.filter(
             (reviewItem) => reviewItem.itemId.toString() === item.id.toString()
           );
-          
+
           const today = moment(new Date()).format("MM-DD-YYYY");
           const matchingPrice = priceResponse.data.find(
             (priceItem) =>
