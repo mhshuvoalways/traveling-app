@@ -44,7 +44,6 @@ const Book = ({
       setBookObj(newObj);
       setBookDates(dateArray);
       setTostify("You have successfully booked!");
-      console.log(newObj);
     } else {
       event.preventDefault();
       setTostify(`Please select at least ${data?.minNight} night!`);
@@ -116,7 +115,7 @@ const Book = ({
           <input
             type="phone"
             className="w-full outline-0 bg-gray-50 p-2"
-            placeholder="Please write your phone with the code e.g. +1"
+            placeholder="e.g. +1"
             required
             name="phone"
             value={details.phone}

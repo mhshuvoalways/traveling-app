@@ -10,7 +10,6 @@ const Paypal = ({
   finalItems,
   setFinalItems,
 }) => {
-  console.log(bookObj);
   return (
     <div className="mt-5">
       <PayPalScriptProvider
