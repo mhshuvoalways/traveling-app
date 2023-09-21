@@ -116,7 +116,7 @@ const Book = ({
           <input
             type="phone"
             className="w-full outline-0 bg-gray-50 p-2"
-            placeholder="Your Phone"
+            placeholder="Please write your phone with the code e.g. +1"
             required
             name="phone"
             value={details.phone}
