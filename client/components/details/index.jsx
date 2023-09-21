@@ -54,7 +54,7 @@ const Details = ({ query }) => {
   };
 
   return (
-    <div className="pt-16">
+    <div className="pt-24">
       <Pictures pictures={findItems} />
       <div className="w-10/12 mx-auto mt-10 flex justify-between gap-5 flex-wrap lg:flex-nowrap flex-col-reverse lg:flex-row">
         <div className="space-y-5 lg:w-8/12 w-full">

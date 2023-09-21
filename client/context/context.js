@@ -72,7 +72,7 @@ const Context = ({ children }) => {
           return parseICS(icsData);
         };
         const parsedEvents = await fetchVRBODates();
-        setInterval(fetchVRBODates, 30000);
+        // setInterval(fetchVRBODates, 15000);
 
         const updatedItems = database.map((item) => {
           const matchingAvailabilityDates = availabilityResponse.data.filter(

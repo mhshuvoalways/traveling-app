@@ -37,7 +37,7 @@ const Header = () => {
       <header className="w-10/12 mx-auto">
         <nav className="flex justify-between gap-5 flex-wrap items-center">
           <Link href="/">
-            <Image src={Logo} className="rounded-lg w-16" alt="" />
+            <Image src={Logo} className="rounded-lg w-28" alt="" />
           </Link>
           {showHeader ? (
             <p

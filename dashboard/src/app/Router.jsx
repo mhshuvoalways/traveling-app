@@ -1,7 +1,6 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "../pages/Home";
 import Condos from "../pages/Condos";
-import CustomerDetails from "../pages/CustomerDetails";
 import Login from "../components/login";
 
 const Router = () => {
@@ -10,7 +9,6 @@ const Router = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/condos" element={<Condos />} />
-        <Route path="/customers/:condoid" element={<CustomerDetails />} />
         <Route path="/login" element={<Login />} />
       </Routes>
     </BrowserRouter>

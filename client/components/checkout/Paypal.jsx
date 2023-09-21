@@ -10,6 +10,7 @@ const Paypal = ({
   finalItems,
   setFinalItems,
 }) => {
+  console.log(bookObj);
   return (
     <div className="mt-5">
       <PayPalScriptProvider
@@ -37,13 +38,14 @@ const Paypal = ({
                 const newObj = {
                   itemId: bookObj.id,
                   dates: bookDates,
+                  name: bookObj.details.name,
+                  email: bookObj.details.email,
+                  phone: bookObj.details.phone,
                 };
                 axios
                   .post("/book/addbook", newObj)
                   .then((bookRes) => {
                     const temp = [...finalItems];
-                    console.log(temp);
-                    console.log(bookRes.data);
                     temp.map((item) => {
                       if (
                         bookRes.data.itemId.toString() === item.id.toString()

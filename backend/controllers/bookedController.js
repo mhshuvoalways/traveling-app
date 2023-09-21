@@ -12,10 +12,14 @@ const getBooks = (req, res) => {
 };
 
 const addBook = (req, res) => {
-  const { itemId, dates } = req.body;
+  const { itemId, dates, name, email, phone } = req.body;
+  console.log(req.body);
   const orderObj = {
     itemId: itemId,
     dates,
+    name,
+    email,
+    phone,
   };
   new Booked(orderObj)
     .save()
