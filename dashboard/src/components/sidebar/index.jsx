@@ -1,5 +1,6 @@
 import { useState, useContext } from "react";
 import { MyContext } from "../../context/Context";
+import { Link } from "react-router-dom";
 
 const SidebarHeader = ({ children }) => {
   const [isOpen, setIsOpen] = useState(true);
@@ -34,9 +35,18 @@ const SidebarHeader = ({ children }) => {
         >
           <ul className="list-none my-10">
             <li>
-              <p className="hover:text-blue-700 font-semibold hover:bg-gray-50 py-3 pl-10 cursor-pointer">
-                Dashboard
-              </p>
+              <Link to="/">
+                <p className="hover:text-blue-700 font-semibold hover:bg-gray-50 py-3 pl-10 cursor-pointer">
+                  Price Change
+                </p>
+              </Link>
+            </li>
+            <li>
+              <Link to="/condos">
+                <p className="hover:text-blue-700 font-semibold hover:bg-gray-50 py-3 pl-10">
+                  Condos & Customers
+                </p>
+              </Link>
             </li>
             <li onClick={logoutHandler}>
               <p className="hover:text-blue-700 font-semibold hover:bg-gray-50 py-3 pl-10 cursor-pointer">

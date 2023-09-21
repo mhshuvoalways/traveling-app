@@ -59,20 +59,20 @@ const Context = ({ children }) => {
     ["items", condoId],
     async () => {
       if (condoId) {
-        const [
-          availabilityResponse,
-          vrboDates,
-          reviewsResponse,
-          priceResponse,
-        ] = await Promise.all([
-          axios.get("/book/getbooks"),
-          axios.get(`/calendar/getvrbodates/${condoId}`),
-          axios.get("/review/getreviews"),
-          axios.get("/price/getprices"),
-        ]);
+        const [availabilityResponse, reviewsResponse, priceResponse] =
+          await Promise.all([
+            axios.get("/book/getbooks"),
+            axios.get("/review/getreviews"),
+            axios.get("/price/getprices"),
+          ]);
 
-        const icsData = vrboDates.data;
-        const parsedEvents = parseICS(icsData);
+        const fetchVRBODates = async () => {
+          const response = await axios.get(`/calendar/getvrbodates/${condoId}`);
+          const icsData = response.data;
+          return parseICS(icsData);
+        };
+        const parsedEvents = await fetchVRBODates();
+        setInterval(fetchVRBODates, 30000);
 
         const updatedItems = database.map((item) => {
           const matchingAvailabilityDates = availabilityResponse.data.filter(
