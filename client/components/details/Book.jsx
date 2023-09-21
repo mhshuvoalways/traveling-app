@@ -15,7 +15,6 @@ const Book = ({
   onChange,
   setTostify,
 }) => {
-  console.log(data);
   const router = useRouter();
   const [details, setDetails] = useState({
     name: "",
