@@ -7,6 +7,10 @@ const bookSchema = new Schema(
       type: String,
       required: true,
     },
+    title: {
+      type: String,
+      required: true,
+    },
     dates: [
       {
         type: String,

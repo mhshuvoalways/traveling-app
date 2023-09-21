@@ -37,6 +37,7 @@ const Paypal = ({
                 const newObj = {
                   itemId: bookObj.id,
                   dates: bookDates,
+                  title: bookObj.title,
                   name: bookObj.details.name,
                   email: bookObj.details.email,
                   phone: bookObj.details.phone,

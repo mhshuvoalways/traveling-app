@@ -14,11 +14,12 @@ const Details = () => {
       })
       .catch((err) => console.log(err));
   }, [param]);
-
+  console.log(customers);
   return (
     <div>
       {customers.map((cus) => (
         <div key={cus._id} className="bg-white p-5 shadow rounded mb-5">
+          <p className="text-lg border-b py-2">Condo Name: {cus.title}</p>
           <p className="text-lg border-b py-2">Name: {cus.name}</p>
           <div className="flex justify-between gap-2 flex-wrap border-b py-2">
             <p className="text-lg">Email: {cus.email}</p>

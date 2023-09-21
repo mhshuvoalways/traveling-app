@@ -12,10 +12,10 @@ const getBooks = (req, res) => {
 };
 
 const addBook = (req, res) => {
-  const { itemId, dates, name, email, phone } = req.body;
-  console.log(req.body);
+  const { itemId, dates, name, email, phone, title } = req.body;
   const orderObj = {
     itemId: itemId,
+    title,
     dates,
     name,
     email,
