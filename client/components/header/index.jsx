@@ -71,6 +71,14 @@ const Header = () => {
                 Properties
               </Link>
             </li>
+            <li>
+              <Link
+                href="/tidetime"
+                className="cursor-pointer hover:text-primary text-lg text-gray-600"
+              >
+                Tide Time
+              </Link>
+            </li>
           </ul>
         </nav>
       </header>

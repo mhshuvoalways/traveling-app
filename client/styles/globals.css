@@ -33,4 +33,12 @@
     text-indent: 1px;
     text-overflow: "";
   }
+  
+  .tidetime::-webkit-scrollbar {
+    display: none;
+  }
+  .tidetime {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none;
+  }
 }
