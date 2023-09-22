@@ -100,6 +100,11 @@ const Header = () => {
               <p className="py-2 w-10/12 mx-auto">Properties</p>
             </Link>
           </li>
+          <li>
+            <Link href="/tidetime">
+              <p className="py-2 w-10/12 mx-auto">Tide Time</p>
+            </Link>
+          </li>
         </ul>
       </div>
     </div>

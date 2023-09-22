@@ -6,7 +6,7 @@ const index = () => {
     <div>
       <Header />
       <iframe
-        className="w-full h-screen pt-32 border-none tidetime overflow-hidden"
+        className="w-full h-screen pt-32 border-none overflow-hidden"
         src="https://www.tidetime.org/north-america/united-states/new-smyrna-beach.htm"
       ></iframe>
       <Footer />
