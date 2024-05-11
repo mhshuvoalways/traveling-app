@@ -47,8 +47,8 @@ const Reviews = () => {
             Travel Reviews
           </p>
           <p className="text-white text-lg">
-            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aene an
-            commodo ligula eget dolor. Aenean massa. Cum sociis the
+            The reviews are dynamically generated from the original feedback
+            provided by users for each item
           </p>
         </div>
         <Slider {...settings} className="mt-10">

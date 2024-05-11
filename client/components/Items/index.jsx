@@ -22,12 +22,15 @@ const Index = () => {
         <Link
           href="properties"
           className="cursor-pointer text-primary hover:text-secondary"
+          style={{
+            textWrap: "nowrap",
+          }}
         >
           Explore All
         </Link>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 mt-10 gap-5 flex-wrap md:flex-nowrap">
-        {finalItems?.map((condo) => (
+        {finalItems?.slice(0, 4).map((condo) => (
           <ItemCard
             key={condo.id}
             id={condo.id}
