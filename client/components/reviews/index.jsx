@@ -7,7 +7,7 @@ import "slick-carousel/slick/slick.css";
 import { MyContext } from "../../context/context";
 import Star from "./Star";
 
-const index = () => {
+const Reviews = () => {
   const { allReviews } = useContext(MyContext);
 
   const settings = {
@@ -52,7 +52,7 @@ const index = () => {
           </p>
         </div>
         <Slider {...settings} className="mt-10">
-          {allReviews.data?.map((el, index) => (
+          {allReviews.data?.map((el, Reviews) => (
             <div
               key={index}
               className="bg-white rounded h-56 items-center !flex gap-5 !w-[95%] p-10 mx-auto"
@@ -71,4 +71,4 @@ const index = () => {
   );
 };
 
-export default index;
+export default Reviews;
