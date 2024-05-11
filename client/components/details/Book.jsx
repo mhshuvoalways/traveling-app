@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { useRouter } from "next/router";
 import moment from "moment/moment";
 import { motion } from "framer-motion";
@@ -14,46 +13,12 @@ const Book = ({
   uniqueDatesArray,
   onChange,
   setTostify,
+  sumReview,
 }) => {
+
   const router = useRouter();
-  const [details, setDetails] = useState({
-    name: "",
-    email: "",
-    phone: "",
-  });
-
-  const onChangeHandler = (event) => {
-    setDetails({
-      ...details,
-      [event.target.name]: event.target.value,
-    });
-  };
-
-  const onSubmitHandler = (event) => {
-    if (
-      details.name &&
-      details.email &&
-      details.phone &&
-      data?.minNight <= dateArray.length
-    ) {
-      event.preventDefault();
-      const newObj = data;
-      newObj.details = details;
-      router.push("/checkout");
-      setBookObj(newObj);
-      setBookDates(dateArray);
-      setTostify("You have successfully booked!");
-    } else {
-      event.preventDefault();
-      setTostify(`Please select at least ${data?.minNight} night!`);
-    }
-  };
-
   return (
-    <form
-      className="shadow-sm border rounded-xl p-5 md:p-00 bg-white text-gray-700"
-      onSubmit={onSubmitHandler}
-    >
+    <div className="shadow-sm border rounded-xl p-5 md:p-00 bg-white text-gray-700">
       <div className="flex gap-0 justify-between items-center">
         <div className="flex gap-0 items-center">
           <p className="font-semibold text-3xl">${data?.price}</p>
@@ -62,8 +27,11 @@ const Book = ({
         </div>
         <div className="flex gap-0 items-center">
           <i className="fa-solid fa-star text-yellow-500"></i>
-          <p className="font-semibold">5</p>
-          <p className="text-gray-600">(10)</p>
+          <p className="font-semibold">
+            {data?.reviews.length &&
+              (sumReview / data?.reviews.length).toFixed(1)}
+          </p>
+          <p className="text-gray-600">({data?.reviews.length})</p>
         </div>
       </div>
       <div className="mt-5 space-y-3 border p-5 rounded-2xl">
@@ -83,46 +51,6 @@ const Book = ({
           </div>
         </div>
       </div>
-
-      <div className="mt-5 py-3 border-y">
-        <div>
-          <label className="text-lg">Your Name: *</label>
-          <input
-            type="text"
-            className="w-full outline-0 bg-gray-50 p-2"
-            placeholder="Your Name"
-            required
-            name="name"
-            value={details.name}
-            onChange={onChangeHandler}
-          />
-        </div>
-        <div>
-          <label className="text-lg">Your Email: *</label>
-          <input
-            type="email"
-            className="w-full outline-0 bg-gray-50 p-2"
-            placeholder="Your Email"
-            required
-            name="email"
-            value={details.email}
-            onChange={onChangeHandler}
-          />
-        </div>
-        <div>
-          <label className="text-lg">Your Phone: *</label>
-          <input
-            type="phone"
-            className="w-full outline-0 bg-gray-50 p-2"
-            placeholder="e.g. +1"
-            required
-            name="phone"
-            value={details.phone}
-            onChange={onChangeHandler}
-          />
-        </div>
-      </div>
-
       <div>
         <div className="flex justify-between gap-2 mt-5 text-xl">
           <p>
@@ -154,14 +82,31 @@ const Book = ({
           </p>
         </div>
       </div>
-      <motion.button
-        className="bg-secondary w-full rounded-full px-2 py-2 mt-5 text-white font-semibold"
-        whileHover={{ scale: 1.1 }}
-        whileTap={{ scale: 0.9 }}
-      >
-        Book
-      </motion.button>
-    </form>
+      {data?.minNight <= dateArray.length ? (
+        <button
+          className="bg-secondary w-full rounded-full px-2 py-2 mt-5 text-white font-semibold"
+          onClick={() => {
+            setBookObj(data);
+            setBookDates(dateArray);
+            setTostify("You have successfully booked!");
+            router.push("/checkout");
+          }}
+        >
+          Book
+        </button>
+      ) : (
+        <motion.button
+          className="bg-secondary w-full rounded-full px-2 py-2 mt-5 text-white font-semibold"
+          onClick={() => {
+            setTostify(`Please select at least ${data?.minNight} night!`);
+          }}
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 0.9 }}
+        >
+          Book
+        </motion.button>
+      )}
+    </div>
   );
 };
 

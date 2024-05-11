@@ -19,13 +19,11 @@ const ItemCard = ({
   return (
     <Link
       href={`/properties/${id}`}
-      className={`bg-white w-full shadow-sm rounded ${
-        property ? "md:w-5/12" : "md:w-4/12"
-      }`}
+      className={`bg-white w-full shadow-sm rounded`}
       onMouseOver={() => setCardHover && setCardHover(id)}
     >
       <Image
-        src={images[0]}
+        src={images[id]}
         alt=""
         className={`rounded-lg ${!property && "h-full md:h-60"}`}
         unoptimized

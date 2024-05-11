@@ -33,4 +33,7 @@
     text-indent: 1px;
     text-overflow: "";
   }
+  .modal::-webkit-scrollbar {
+    display: none;
+  }
 }

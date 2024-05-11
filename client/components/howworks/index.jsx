@@ -5,7 +5,7 @@ import Item3 from "../../public/howworks/item3.webp";
 
 const index = () => {
   return (
-    <div className="w-10/12 mx-auto pt-20">
+    <div className="w-10/12 mx-auto pt-20 container">
       <div>
         <p className="text-secondary font-semibold text-4xl">How it work</p>
         <p className="text-gray-600 mt-2">Keep calm & travel on</p>

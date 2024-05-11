@@ -1,6 +1,5 @@
 const mongoose = require("mongoose");
 const port = process.env.PORT || 5000;
-const { adminRegister } = require("../controllers/userController");
 
 module.exports = (app) => {
   mongoose
@@ -8,10 +7,6 @@ module.exports = (app) => {
     .then(() => {
       app.listen(port, () => {
         console.log(`App listening at : ${port}`);
-        adminRegister({
-          email: "admin@mail.com",
-          password: "admin123",
-        });
       });
     })
     .catch(() => {

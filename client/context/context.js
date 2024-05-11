@@ -1,9 +1,8 @@
-import { createContext, useState, useEffect } from "react";
-import { useQuery } from "react-query";
 import moment from "moment/moment";
-import { useRouter } from "next/router";
-import axios from "../utils/axios";
+import { createContext, useEffect, useState } from "react";
+import { useQuery } from "react-query";
 import database from "../public/db";
+import axios from "../utils/axios";
 
 export const MyContext = createContext(null);
 
@@ -26,14 +25,12 @@ const Context = ({ children }) => {
   const [bookDates, setBookDates] = useState([]);
   const [finalItems, setFinalItems] = useState([]);
   const [tostify, setTostify] = useState("");
+  const [allReviews, setAllReviews] = useState([]);
 
-  const router = useRouter();
-  const condoId = router.query.propertydetails;
-
-  const onChangeLocation = (event) => {
+  const onChangeLocation = (value) => {
     setSearchsObj({
       ...searchObj,
-      searchLocation: event.target.value,
+      searchLocation: value,
     });
   };
 
@@ -55,167 +52,31 @@ const Context = ({ children }) => {
     });
   };
 
-  const { data, isLoading, isError } = useQuery(
-    ["items", condoId],
-    async () => {
-      if (condoId) {
-        const [availabilityResponse, reviewsResponse, priceResponse] =
-          await Promise.all([
-            axios.get("/book/getbooks"),
-            axios.get("/review/getreviews"),
-            axios.get("/price/getprices"),
-          ]);
-
-        const fetchVRBODates = async () => {
-          const response = await axios.get(`/calendar/getvrbodates/${condoId}`);
-          const icsData = response.data;
-          return parseICS(icsData);
-        };
-        const parsedEvents = await fetchVRBODates();
-        setInterval(fetchVRBODates, 15000);
-
-        const updatedItems = database.map((item) => {
-          const matchingAvailabilityDates = availabilityResponse.data.filter(
-            (dateItem) => dateItem.itemId.toString() === item.id.toString()
-          );
-          const mergedAvailabilityDates = matchingAvailabilityDates.reduce(
-            (acc, dateItem) => [...acc, ...dateItem.dates],
-            []
-          );
-          const matchingReviews = reviewsResponse.data.filter(
-            (reviewItem) => reviewItem.itemId.toString() === item.id.toString()
-          );
-
-          const today = moment(new Date()).format("MM-DD-YYYY");
-          const matchingPrice = priceResponse.data.find(
-            (priceItem) =>
-              priceItem.itemId.toString() === item.id.toString() &&
-              priceItem.dates.includes(today)
-          );
-
-          return {
-            ...item,
-            availability: [
-              ...item.availability,
-              ...mergedAvailabilityDates,
-              ...parsedEvents,
-            ],
-            reviews: [...item.reviews, ...matchingReviews],
-            price: matchingPrice ? matchingPrice.price : item.price,
-          };
-        });
-        return updatedItems;
-      } else {
-        const [availabilityResponse, reviewsResponse, priceResponse] =
-          await Promise.all([
-            axios.get("/book/getbooks"),
-            axios.get("/review/getreviews"),
-            axios.get("/price/getprices"),
-          ]);
-
-        const updatedItems = database.map((item) => {
-          const matchingAvailabilityDates = availabilityResponse.data.filter(
-            (dateItem) => dateItem.itemId.toString() === item.id.toString()
-          );
-          const mergedAvailabilityDates = matchingAvailabilityDates.reduce(
-            (acc, dateItem) => [...acc, ...dateItem.dates],
-            []
-          );
-          const matchingReviews = reviewsResponse.data.filter(
-            (reviewItem) => reviewItem.itemId.toString() === item.id.toString()
-          );
-
-          const today = moment(new Date()).format("MM-DD-YYYY");
-          const matchingPrice = priceResponse.data.find(
-            (priceItem) =>
-              priceItem.itemId.toString() === item.id.toString() &&
-              priceItem.dates.includes(today)
-          );
-
-          return {
-            ...item,
-            availability: [...item.availability, ...mergedAvailabilityDates],
-            reviews: [...item.reviews, ...matchingReviews],
-            price: matchingPrice ? matchingPrice.price : item.price,
-          };
-        });
-        return updatedItems;
-      }
-    }
-  );
-
-  function parseICS(icsData) {
-    const lines = icsData.split("\n");
-    const events = [];
-    let event = {};
-
-    for (let i = 0; i < lines.length; i++) {
-      const line = lines[i].trim();
-
-      if (line.startsWith("BEGIN:VEVENT")) {
-        event = {};
-      } else if (line.startsWith("END:VEVENT")) {
-        if (event.dtstamp && event.dtstart && event.dtend) {
-          event.dtstamp = parseICSTime(event.dtstamp);
-          event.dtstart = parseICSTime(event.dtstart);
-          event.dtend = parseICSTime(event.dtend);
-          events.push(event);
-        }
-      } else {
-        const [key, value] = line.split(":");
-        switch (key) {
-          case "UID":
-            event.uid = value;
-            break;
-          case "DTSTAMP":
-            event.dtstamp = value;
-            break;
-          case "DTSTART;VALUE=DATE":
-            event.dtstart = value;
-            break;
-          case "DTEND;VALUE=DATE":
-            event.dtend = value;
-            break;
-          case "SUMMARY":
-            event.summary = value;
-            break;
-        }
-      }
-    }
-    const newDatesArray = [];
-    for (const event of events) {
-      newDatesArray.push(...generateDateRange(event.dtstart, event.dtend));
-    }
-    return newDatesArray;
-  }
-
-  function generateDateRange(start, end) {
-    const startDate = new Date(start);
-    const endDate = new Date(end);
-    const dateArray = [];
-    for (
-      let date = startDate;
-      date <= endDate;
-      date.setDate(date.getDate() + 1)
-    ) {
-      dateArray.push(formatDate(date));
-    }
-    return dateArray;
-  }
-
-  function parseICSTime(icsTime) {
-    const year = parseInt(icsTime.slice(0, 4), 10);
-    const month = parseInt(icsTime.slice(4, 6), 10) - 1;
-    const day = parseInt(icsTime.slice(6, 8), 10);
-    return formatDate(new Date(year, month, day));
-  }
-
-  function formatDate(date) {
-    const month = String(date.getMonth() + 1).padStart(2, "0");
-    const day = String(date.getDate()).padStart(2, "0");
-    const year = date.getFullYear();
-    return `${month}-${day}-${year}`;
-  }
+  const { data, isLoading, isError } = useQuery("items", async () => {
+    const [availabilityResponse, reviewsResponse] = await Promise.all([
+      axios.get("/book/getbooks"),
+      axios.get("/review/getreviews"),
+    ]);
+    setAllReviews(reviewsResponse);
+    const updatedItems = database.map((item) => {
+      const matchingAvailabilityDates = availabilityResponse.data.filter(
+        (dateItem) => dateItem.itemId.toString() === item.id.toString()
+      );
+      const mergedAvailabilityDates = matchingAvailabilityDates.reduce(
+        (acc, dateItem) => [...acc, ...dateItem.dates],
+        []
+      );
+      const matchingReviews = reviewsResponse.data.filter(
+        (reviewItem) => reviewItem.itemId.toString() === item.id.toString()
+      );
+      return {
+        ...item,
+        availability: [...item.availability, ...mergedAvailabilityDates],
+        reviews: [...item.reviews, ...matchingReviews],
+      };
+    });
+    return updatedItems;
+  });
 
   const searchClickHandler = () => {
     if (!isLoading && !isError) {
@@ -340,6 +201,7 @@ const Context = ({ children }) => {
         setFinalItems,
         tostify,
         setTostify,
+        allReviews,
 
         bedRoomsAndBeds,
         setBedRoomsAndBeds,

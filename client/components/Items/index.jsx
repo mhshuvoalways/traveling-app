@@ -1,13 +1,13 @@
+import Link from "next/link";
 import { useContext } from "react";
 import { MyContext } from "../../context/context";
-import Link from "next/link";
 import ItemCard from "./ItemCard";
 
 const Index = () => {
   const { finalItems } = useContext(MyContext);
 
   return (
-    <div className="w-10/12 mx-auto pt-20">
+    <div className="w-10/12 mx-auto pt-20 container">
       <div className="flex justify-between gap-5">
         <div>
           <p className="text-secondary font-semibold text-4xl">Stay with us</p>
@@ -26,7 +26,7 @@ const Index = () => {
           Explore All
         </Link>
       </div>
-      <div className="flex justify-between items-center mt-10 gap-5 flex-wrap md:flex-nowrap">
+      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 mt-10 gap-5 flex-wrap md:flex-nowrap">
         {finalItems?.map((condo) => (
           <ItemCard
             key={condo.id}

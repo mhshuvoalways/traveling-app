@@ -10,10 +10,10 @@ const Index = () => {
   }, [videoRef]);
 
   return (
-    <div className="w-10/12 mx-auto pt-32 lg:pt-0">
-      <div className="flex flex-wrap md:flex-nowrap justify-between items-center md:h-screen h-auto gap-5">
+    <div className="w-10/12 mx-auto pt-28 container">
+      <div className="flex flex-wrap md:flex-nowrap justify-between items-center gap-5">
         <div className="space-y-5 w-full md:w-1/2">
-          <p className="text-xl border-b-2 pb-2 border-secondary text-gray-600 text-center">
+          <p className="text-xl border-b-2 pb-2 border-secondary text-gray-600 text-center inline-block">
             Your Home Away from Home in New Smyrna Beach, Florida
           </p>
           <p className="text-secondary font-bold text-7xl">Healthy travel,</p>

@@ -30,14 +30,14 @@ const Header = () => {
 
   return (
     <div
-      className={`py-5 shadow-sm fixed left-0 right-0 z-10 transition-transform duration-500 ease-in-out bg-white $ ${
+      className={`py-5 shadow-sm sticky top-0 z-10 transition-transform duration-500 ease-in-out bg-white $ ${
         scrollDirection ? "transform-none" : "-translate-y-full"
       }`}
     >
-      <header className="w-10/12 mx-auto">
+      <header className="w-10/12 mx-auto container">
         <nav className="flex justify-between gap-5 flex-wrap items-center">
           <Link href="/">
-            <Image src={Logo} className="rounded-lg w-28" alt="" />
+            <Image src={Logo} className="rounded-lg w-16" alt="" />
           </Link>
           {showHeader ? (
             <p
@@ -58,7 +58,7 @@ const Header = () => {
             <li>
               <Link
                 href="/"
-                className="cursor-pointer hover:text-primary text-lg text-gray-600"
+                className="cursor-pointer hover:text-primary text-lg text-gray-600 font-semibold"
               >
                 Home
               </Link>
@@ -66,17 +66,9 @@ const Header = () => {
             <li>
               <Link
                 href="/properties"
-                className="cursor-pointer hover:text-primary text-lg text-gray-600"
+                className="cursor-pointer hover:text-primary text-lg text-gray-600 font-semibold"
               >
                 Properties
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/tidetime"
-                className="cursor-pointer hover:text-primary text-lg text-gray-600"
-              >
-                Tide Time
               </Link>
             </li>
           </ul>
@@ -87,22 +79,17 @@ const Header = () => {
           showHeader
             ? "translate-y-0 w-full"
             : "-translate-y-full w-0 opacity-0"
-        } transform transition-all duration-300 fixed top-24 border-b border-t shadow-md left-0 right-0 z-20 block md:hidden bg-white`}
+        } transform transition-all duration-300 fixed top-20 border-b border-t shadow-md left-0 right-0 z-20 block md:hidden bg-white`}
       >
         <ul>
           <li>
             <Link href="/">
-              <p className="py-2 w-10/12 mx-auto">Home</p>
+              <p className="py-2 w-10/12 mx-auto font-semibold">Home</p>
             </Link>
           </li>
           <li>
             <Link href="/properties">
-              <p className="py-2 w-10/12 mx-auto">Properties</p>
-            </Link>
-          </li>
-          <li>
-            <Link href="/tidetime">
-              <p className="py-2 w-10/12 mx-auto">Tide Time</p>
+              <p className="py-2 w-10/12 mx-auto font-semibold">Properties</p>
             </Link>
           </li>
         </ul>

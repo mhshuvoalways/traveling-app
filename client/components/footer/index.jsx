@@ -4,8 +4,8 @@ import Logo from "../../public/logo/Logo.jpg";
 
 const Footer = () => {
   return (
-    <div className="py-10 border-t mt-20">
-      <div className="w-10/12 mx-auto flex justify-center sm:justify-between gap-10 flex-wrap">
+    <div className="py-10 mt-20">
+      <div className="w-10/12 mx-auto flex justify-center sm:justify-between gap-10 flex-wrap container">
         <div className="w-full sm:w-3/12">
           <Link href="/">
             <Image src={Logo} alt="" className="w-20" />
@@ -16,7 +16,7 @@ const Footer = () => {
         </div>
         <div className="w-full sm:w-5/12">
           <p className="text-xl font-semibold">About us</p>
-          <p className="mt-2 text-justify">
+          <p className="mt-2 text-justify opacity-70">
             Our experienced staff makes sure that all of our properties are
             clean and well maintained. We have a dedicated team to make sure
             that we provide the best customer service and experience when you

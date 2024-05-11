@@ -24,7 +24,7 @@ const Details = () => {
   }, [bookObj, router]);
 
   return (
-    <div className="pt-32">
+    <div className="pt-16">
       <div className="w-10/12 mx-auto mt-10 flex justify-between gap-5 flex-wrap md:flex-nowrap flex-col-reverse md:flex-row">
         <div className="space-y-5 md:w-8/12 w-full">
           <Confirm

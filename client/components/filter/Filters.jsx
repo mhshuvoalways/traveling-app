@@ -1,6 +1,6 @@
-import db from "../../public/db";
-import ReactStars from "react-rating-stars-component";
 import { motion } from "framer-motion";
+import ReactStars from "react-rating-stars-component";
+import db from "../../public/db";
 
 const Filters = ({
   modalHandler,
@@ -17,6 +17,7 @@ const Filters = ({
   setAmenities,
   propertyTypes,
   setPropertyTypes,
+  setFinalItems,
 }) => {
   let minValue = 1;
   let maxValue;
@@ -211,7 +212,14 @@ const Filters = ({
       <div className="flex justify-between gap-2 mt-10">
         <motion.p
           className="font-semibold text-lg cursor-pointer border px-4 py-1 rounded-full"
-          onClick={modalHandler}
+          onClick={() => {
+            setBedRoomsAndBeds(1);
+            setBedRooms(1);
+            setPriceRange(1);
+            setReviewRange(0);
+            setAmenities([])
+            setPropertyTypes([])
+          }}
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
         >

@@ -41,7 +41,7 @@ const Index = () => {
   return (
     <div>
       <Header />
-      <div className="w-10/12 mx-auto pt-32">
+      <div className="w-10/12 mx-auto pt-28 container">
         <Search availability />
         <FilterBtn modalHandler={modalHandler} />
         {modal && (
@@ -65,7 +65,7 @@ const Index = () => {
           </Modal>
         )}
         <div className="flex justify-center mt-10 gap-5 flex-wrap md:flex-nowrap">
-          <div className="w-full md:w-8/12 flex gap-10 flex-wrap">
+          <div className="w-full md:w-8/12 grid grid-cols-1 lg:grid-cols-2 gap-5 flex-wrap">
             {finalItems.map((condo) => (
               <ItemCard
                 property

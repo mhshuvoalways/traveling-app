@@ -1,6 +1,6 @@
 const index = () => {
   return (
-    <div className="w-10/12 mx-auto pt-20">
+    <div className="w-10/12 mx-auto pt-20 container">
       <div className="flex justify-between gap-5 items-center">
         <div>
           <p className="text-secondary font-semibold text-4xl">
