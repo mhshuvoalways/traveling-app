@@ -52,7 +52,7 @@ const Reviews = () => {
           </p>
         </div>
         <Slider {...settings} className="mt-10">
-          {allReviews.data?.map((el, Reviews) => (
+          {allReviews.data?.map((el, index) => (
             <div
               key={index}
               className="bg-white rounded h-56 items-center !flex gap-5 !w-[95%] p-10 mx-auto"
