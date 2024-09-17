@@ -1,6 +1,6 @@
 import NewSmyrnaBeach from "./location/NewSmyrnaBeach.png";
 
-const cloudinaryBaseUrl = "https://res.cloudinary.com/mhshuvoit/image/upload";
+const cloudinaryBaseUrl = "https://res.cloudinary.com/mhshuvoalways/image/upload";
 
 // condo 1
 const condo1Images = [];

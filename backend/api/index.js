@@ -2,10 +2,10 @@ require("dotenv").config();
 const express = require("express");
 const cors = require("cors");
 const morgan = require("morgan");
-const db = require("./config/db");
+const db = require("../config/db");
 
-const bookRouter = require("./routers/bookRouter");
-const reviewRouter = require("./routers/reviewRouter");
+const bookRouter = require("../routers/bookRouter");
+const reviewRouter = require("../routers/reviewRouter");
 
 const app = express();
 app.use(cors());
