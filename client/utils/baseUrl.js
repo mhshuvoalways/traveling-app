@@ -1,7 +1,7 @@
 let baseUrl = "";
 
 if (process.env.NODE_ENV === "production") {
-  baseUrl = "https://traveling-app-q4bj.onrender.com";
+  baseUrl = "https://traveling-app-api.vercel.app";
 } else {
   baseUrl = "http://localhost:5000";
 }
